@@ -12,7 +12,14 @@ try:
     from tensorflow.keras import layers, models, regularizers  # type: ignore
 except ImportError:
     tf = None
-    layers = models = regularizers = Any
+    class _DummyCallable:
+        def __init__(self, *args: Any, **kwargs: Any) -> None:
+            pass
+        def __call__(self, *args: Any, **kwargs: Any) -> Any:
+            return self
+        def __getattr__(self, name: str) -> Any:
+            return self
+    layers = models = regularizers = _DummyCallable()
 
 
 def build_resnet50_model(

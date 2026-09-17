@@ -17,7 +17,10 @@ try:
     )
 except ImportError:
     tf = None
-    CSVLogger = EarlyStopping = ModelCheckpoint = ReduceLROnPlateau = TensorBoard = Any
+    class _DummyCallback:  # type: ignore
+        def __init__(self, *args: Any, **kwargs: Any) -> None:
+            pass
+    CSVLogger = EarlyStopping = ModelCheckpoint = ReduceLROnPlateau = TensorBoard = _DummyCallback
 
 
 def get_callbacks(

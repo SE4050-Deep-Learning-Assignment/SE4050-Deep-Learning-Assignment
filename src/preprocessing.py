@@ -6,7 +6,13 @@ across ResNet50, Custom CNN, VGG16, and EfficientNetB3.
 
 import os
 from pathlib import Path
-from typing import Callable, Dict, Optional, Tuple, Any
+from typing import Callable, Dict, List, Optional, Tuple, Any
+
+class _DummyImageDataGenerator:
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        pass
+    def flow_from_directory(self, *args: Any, **kwargs: Any) -> Any:
+        return None
 
 try:
     import tensorflow as tf  # type: ignore
@@ -19,10 +25,10 @@ try:
             try:
                 from keras_preprocessing.image import ImageDataGenerator  # type: ignore
             except ImportError:
-                ImageDataGenerator = Any
+                ImageDataGenerator = _DummyImageDataGenerator
 except ImportError:
     tf = None
-    ImageDataGenerator = Any
+    ImageDataGenerator = _DummyImageDataGenerator
 
 
 def get_model_preprocessing_fn(model_name: str) -> Optional[Callable]:
