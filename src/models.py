@@ -6,9 +6,13 @@ Model architectural definitions and transfer learning builders for:
 4. EfficientNetB3 (Compound-scaled MBConv architecture)
 """
 
-from typing import List, Optional, Tuple
-import tensorflow as tf
-from tensorflow.keras import layers, models, regularizers
+from typing import List, Optional, Tuple, Any
+try:
+    import tensorflow as tf  # type: ignore
+    from tensorflow.keras import layers, models, regularizers  # type: ignore
+except ImportError:
+    tf = None
+    layers = models = regularizers = Any
 
 
 def build_resnet50_model(

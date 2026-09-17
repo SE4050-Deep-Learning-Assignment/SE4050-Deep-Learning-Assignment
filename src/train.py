@@ -5,14 +5,19 @@ Implements two-stage progressive transfer learning with learning rate adaptation
 
 import os
 from typing import Dict, List, Optional, Tuple, Any
-import tensorflow as tf
-from tensorflow.keras.callbacks import (
-    CSVLogger,
-    EarlyStopping,
-    ModelCheckpoint,
-    ReduceLROnPlateau,
-    TensorBoard
-)
+
+try:
+    import tensorflow as tf  # type: ignore
+    from tensorflow.keras.callbacks import (  # type: ignore
+        CSVLogger,
+        EarlyStopping,
+        ModelCheckpoint,
+        ReduceLROnPlateau,
+        TensorBoard
+    )
+except ImportError:
+    tf = None
+    CSVLogger = EarlyStopping = ModelCheckpoint = ReduceLROnPlateau = TensorBoard = Any
 
 
 def get_callbacks(

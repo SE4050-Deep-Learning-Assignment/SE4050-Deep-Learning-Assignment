@@ -7,8 +7,22 @@ across ResNet50, Custom CNN, VGG16, and EfficientNetB3.
 import os
 from pathlib import Path
 from typing import Callable, Dict, Optional, Tuple, Any
-import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+try:
+    import tensorflow as tf  # type: ignore
+    try:
+        from tensorflow.keras.preprocessing.image import ImageDataGenerator  # type: ignore
+    except (ImportError, AttributeError):
+        try:
+            from keras.preprocessing.image import ImageDataGenerator  # type: ignore
+        except ImportError:
+            try:
+                from keras_preprocessing.image import ImageDataGenerator  # type: ignore
+            except ImportError:
+                ImageDataGenerator = Any
+except ImportError:
+    tf = None
+    ImageDataGenerator = Any
 
 
 def get_model_preprocessing_fn(model_name: str) -> Optional[Callable]:

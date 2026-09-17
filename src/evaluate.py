@@ -19,7 +19,10 @@ from sklearn.metrics import (
     recall_score,
     roc_auc_score
 )
-import tensorflow as tf
+try:
+    import tensorflow as tf  # type: ignore
+except ImportError:
+    tf = None
 from src.utils import plot_confusion_matrix_heatmap, plot_multiclass_roc_curves
 
 

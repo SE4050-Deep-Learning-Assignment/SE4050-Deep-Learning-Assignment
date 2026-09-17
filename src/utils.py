@@ -10,7 +10,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, roc_curve, auc
-import tensorflow as tf
+try:
+    import tensorflow as tf  # type: ignore
+except ImportError:
+    tf = None
 
 
 def set_seed(seed: int = 42) -> None:

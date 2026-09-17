@@ -9,8 +9,10 @@ from typing import List, Optional, Tuple
 import cv2
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
-import numpy as np
-import tensorflow as tf
+try:
+    import tensorflow as tf  # type: ignore
+except ImportError:
+    tf = None
 
 
 def find_last_conv_layer(model: tf.keras.Model) -> str:
