@@ -1,0 +1,22 @@
+# ==============================================================================
+# SE4050 - Deep Learning Assignment (2026)
+# Submission Links & Metadata
+# ==============================================================================
+
+Project Title: Automated Multi-Class Brain Tumor MRI Classification Using Deep Learning Architectures
+Project Category: Supervised Deep Learning
+Assigned Primary Model (Author): ResNet50 Transfer Learning + Grad-CAM Explainability
+
+Links:
+- GitHub Repository Link: https://github.com/your-username/SE4050-Deep-Learning-Assignment
+- YouTube Video Demonstration Link (10-minute Viva Video): [Insert YouTube Link Here]
+
+Dataset:
+- Dataset Name: Brain Tumor Classification (MRI)
+- Dataset URL: https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
+
+Models Evaluated:
+1. ResNet50 (Transfer Learning with 2-Stage Fine-Tuning & Grad-CAM)
+2. Custom 4-Stage Hierarchical CNN (Baseline trained from scratch)
+3. VGG16 (Transfer Learning)
+4. EfficientNetB3 (Transfer Learning with Compound Scaling)

@@ -1,0 +1,119 @@
+# ==============================================================================
+# SE4050 - Deep Learning Assignment: Brain Tumor MRI Classification
+# Global Configuration File
+# ==============================================================================
+
+project:
+  name: "Brain-Tumor-MRI-Classification"
+  version: "1.0.0"
+  seed: 42
+
+dataset:
+  kaggle_dataset_slug: "sartajbhuvaji/brain-tumor-classification-mri"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  classes:
+    - "glioma_tumor"
+    - "meningioma_tumor"
+    - "no_tumor"
+    - "pituitary_tumor"
+  num_classes: 4
+  image_size: [224, 224]
+  num_channels: 3
+  split_ratios:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+  stratified: true
+
+preprocessing:
+  crop_contour: true           # Extreme point brain contour extraction using OpenCV
+  apply_clahe: false           # Optional Contrast Limited Adaptive Histogram Equalization
+  normalization: "rescale_255" # [0, 1] scaling or model-specific preprocess_input
+  batch_size: 32
+
+augmentation:
+  enabled: true
+  rotation_range: 20
+  width_shift_range: 0.10
+  height_shift_range: 0.10
+  shear_range: 0.10
+  zoom_range: 0.15
+  horizontal_flip: true
+  vertical_flip: false        # Cranial anatomical orientation preservation
+  fill_mode: "nearest"
+  brightness_range: [0.85, 1.15]
+
+models:
+  # Primary Model (Assigned)
+  resnet50:
+    name: "ResNet50"
+    weights: "imagenet"
+    include_top: false
+    pooling: "avg"
+    dense_units: [256]
+    dropout_rate: 0.4
+    l2_reg: 0.0001
+    freeze_base_epochs: 15
+    fine_tune_epochs: 25
+    initial_lr: 0.001
+    fine_tune_lr: 0.00001
+    fine_tune_layers_from: "conv5_block1_out"
+
+  # Baseline Custom CNN
+  custom_cnn:
+    name: "Custom_CNN"
+    filters: [32, 64, 128, 256]
+    dense_units: [256, 128]
+    dropout_rate: 0.3
+    epochs: 35
+    initial_lr: 0.001
+
+  # Group Model: VGG16
+  vgg16:
+    name: "VGG16"
+    weights: "imagenet"
+    include_top: false
+    pooling: "avg"
+    dense_units: [512, 256]
+    dropout_rate: 0.5
+    l2_reg: 0.0001
+    freeze_base_epochs: 15
+    fine_tune_epochs: 25
+    initial_lr: 0.001
+    fine_tune_lr: 0.00001
+    fine_tune_layers_from: "block5_conv1"
+
+  # Group Model: EfficientNetB3
+  efficientnet_b3:
+    name: "EfficientNetB3"
+    weights: "imagenet"
+    include_top: false
+    pooling: "avg"
+    dense_units: [256]
+    dropout_rate: 0.4
+    l2_reg: 0.0001
+    freeze_base_epochs: 15
+    fine_tune_epochs: 25
+    initial_lr: 0.001
+    fine_tune_lr: 0.00005
+    fine_tune_layers_from: "block6a_expand_conv"
+
+training:
+  optimizer: "adam"
+  loss: "categorical_crossentropy"
+  metrics: ["accuracy", "AUC"]
+  early_stopping:
+    monitor: "val_loss"
+    patience: 8
+    restore_best_weights: true
+  reduce_lr:
+    monitor: "val_loss"
+    factor: 0.2
+    patience: 3
+    min_lr: 0.0000001
+
+outputs:
+  models_dir: "models"
+  logs_dir: "logs"
+  results_dir: "results"

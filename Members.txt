@@ -1,0 +1,24 @@
+# ==============================================================================
+# SE4050 - Deep Learning Assignment (2026)
+# Group Member Details
+# ==============================================================================
+
+Group Leader:
+- Name: SN Gamalath
+- Student ID / Registration No: [Enter Leader Registration Number Here]
+- Email: [Enter Leader Email Here]
+
+Member 2 (Custom CNN Model):
+- Name: [Enter Member 2 Name]
+- Student ID / Registration No: [Enter Member 2 Registration Number]
+- Email: [Enter Member 2 Email]
+
+Member 3 (VGG16 Model):
+- Name: [Enter Member 3 Name]
+- Student ID / Registration No: [Enter Member 3 Registration Number]
+- Email: [Enter Member 3 Email]
+
+Member 4 (EfficientNetB3 Model):
+- Name: [Enter Member 4 Name]
+- Student ID / Registration No: [Enter Member 4 Registration Number]
+- Email: [Enter Member 4 Email]

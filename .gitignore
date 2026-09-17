@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Jupyter Notebook checkpoints & cache
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Data directories (raw and processed MRI datasets)
+data/
+data/raw/
+data/processed/
+*.zip
+*.tar.gz
+
+# Model weights, checkpoints, logs
+models/*.h5
+models/*.keras
+models/*.weights.h5
+logs/
+checkpoints/
+runs/
+
+# Kaggle credentials
+kaggle.json
+.kaggle/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
