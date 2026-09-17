@@ -17,15 +17,13 @@ class _DummyImageDataGenerator:
 try:
     import tensorflow as tf  # type: ignore
     try:
-        from tensorflow.keras.preprocessing.image import ImageDataGenerator  # type: ignore
-    except (ImportError, AttributeError):
+        ImageDataGenerator = getattr(getattr(getattr(tf, "keras", None), "preprocessing", None), "image", None).ImageDataGenerator
+    except Exception:
         try:
-            from keras.preprocessing.image import ImageDataGenerator  # type: ignore
-        except ImportError:
-            try:
-                from keras_preprocessing.image import ImageDataGenerator  # type: ignore
-            except ImportError:
-                ImageDataGenerator = _DummyImageDataGenerator
+            import keras  # type: ignore
+            ImageDataGenerator = getattr(getattr(keras, "preprocessing", None), "image", None).ImageDataGenerator
+        except Exception:
+            ImageDataGenerator = _DummyImageDataGenerator
 except ImportError:
     tf = None
     ImageDataGenerator = _DummyImageDataGenerator
