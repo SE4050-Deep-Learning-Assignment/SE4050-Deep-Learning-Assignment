@@ -35,19 +35,21 @@ def get_model_preprocessing_fn(model_name: str) -> Optional[Callable]:
     Returns:
         Optional[Callable]: Keras preprocess_input function or None for standard rescale.
     """
-    name = model_name.lower().replace("-", "").replace("_", "")
-    if "resnet" in name:
-        from tensorflow.keras.applications.resnet50 import preprocess_input
-        return preprocess_input
-    elif "vgg" in name:
-        from tensorflow.keras.applications.vgg16 import preprocess_input
-        return preprocess_input
-    elif "efficientnet" in name:
-        from tensorflow.keras.applications.efficientnet import preprocess_input
-        return preprocess_input
-    else:
-        # Standard rescale [0, 1] for custom CNN architectures
+    if tf is None or not hasattr(tf, "keras"):
         return None
+
+    name = model_name.lower().replace("-", "").replace("_", "")
+    apps = getattr(tf.keras, "applications", None)
+    if apps is None:
+        return None
+
+    if "resnet" in name and hasattr(apps, "resnet50"):
+        return getattr(apps.resnet50, "preprocess_input", None)
+    elif "vgg" in name and hasattr(apps, "vgg16"):
+        return getattr(apps.vgg16, "preprocess_input", None)
+    elif "efficientnet" in name and hasattr(apps, "efficientnet"):
+        return getattr(apps.efficientnet, "preprocess_input", None)
+    return None
 
 
 def create_image_data_generators(
