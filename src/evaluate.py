@@ -51,7 +51,7 @@ def compute_class_specificity(y_true: np.ndarray, y_pred: np.ndarray, num_classe
 
 
 def benchmark_inference_latency(
-    model: tf.keras.Model,
+    model: Any,
     input_shape: Tuple[int, int, int] = (224, 224, 3),
     num_iterations: int = 100,
     warmup_iterations: int = 20
@@ -60,7 +60,7 @@ def benchmark_inference_latency(
     Measures the average single-sample inference latency in milliseconds (ms).
 
     Args:
-        model (tf.keras.Model): Model to benchmark.
+        model (Any): Model to benchmark.
         input_shape (Tuple[int, int, int]): Input shape.
         num_iterations (int): Benchmark runs.
         warmup_iterations (int): Initial runs to warm up GPU/CPU caches.
@@ -84,7 +84,7 @@ def benchmark_inference_latency(
 
 
 def evaluate_model_comprehensive(
-    model: tf.keras.Model,
+    model: Any,
     test_gen: Any,
     class_names: List[str],
     model_name: str = "ResNet50",

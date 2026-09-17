@@ -27,7 +27,7 @@ def get_callbacks(
     patience: int = 8,
     reduce_lr_patience: int = 3,
     min_lr: float = 1e-7
-) -> List[tf.keras.callbacks.Callback]:
+) -> List[Any]:
     """
     Constructs an industrial-grade callback suite for training stability and best checkpoint retention.
 
@@ -103,8 +103,8 @@ def combine_histories(h1: Any, h2: Any) -> Dict[str, List[float]]:
 
 
 def train_two_phase_model(
-    model: tf.keras.Model,
-    base_model: tf.keras.Model,
+    model: Any,
+    base_model: Any,
     train_gen: Any,
     val_gen: Any,
     model_name: str = "ResNet50",
@@ -116,7 +116,7 @@ def train_two_phase_model(
     class_weights: Optional[Dict[int, float]] = None,
     output_dir: str = "models",
     log_dir: str = "logs"
-) -> Tuple[tf.keras.Model, Dict[str, List[float]]]:
+) -> Tuple[Any, Dict[str, List[float]]]:
     """
     Executes an end-to-end two-phase transfer learning workflow:
       Phase 1 (Warmup / Feature Extraction): Train custom classifier head while base is frozen.

@@ -139,7 +139,7 @@ def create_tf_data_pipelines(
     target_size: Tuple[int, int] = (224, 224),
     batch_size: int = 32,
     model_name: str = "ResNet50"
-) -> Tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset, List[str]]:
+) -> Tuple[Any, Any, Any, List[str]]:
     """
     Creates high-performance tf.data pipelines with prefetching and GPU parallel loading.
 

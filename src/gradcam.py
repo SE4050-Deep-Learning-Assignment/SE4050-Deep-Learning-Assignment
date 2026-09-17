@@ -5,17 +5,18 @@ to verify pathological feature localization.
 """
 
 import os
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Any
 import cv2
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
+import numpy as np
 try:
     import tensorflow as tf  # type: ignore
 except ImportError:
     tf = None
 
 
-def find_last_conv_layer(model: tf.keras.Model) -> str:
+def find_last_conv_layer(model: Any) -> str:
     """
     Automatically detects the name of the final convolutional layer in the model hierarchy.
 
@@ -47,7 +48,7 @@ def find_last_conv_layer(model: tf.keras.Model) -> str:
 
 def make_gradcam_heatmap(
     img_array: np.ndarray,
-    model: tf.keras.Model,
+    model: Any,
     last_conv_layer_name: Optional[str] = None,
     pred_index: Optional[int] = None
 ) -> np.ndarray:
@@ -165,7 +166,7 @@ def overlay_gradcam(
 
 
 def visualize_gradcam_batch(
-    model: tf.keras.Model,
+    model: Any,
     images: List[np.ndarray],
     true_labels: List[str],
     class_names: List[str],

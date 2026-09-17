@@ -22,7 +22,7 @@ def build_resnet50_model(
     dropout_rate: float = 0.4,
     l2_reg: float = 1e-4,
     freeze_base: bool = True
-) -> Tuple[tf.keras.Model, tf.keras.Model]:
+) -> Tuple[Any, Any]:
     """
     Constructs a transfer-learning architecture based on ResNet50 with ImageNet pretrained weights
     and a custom deep regularization head.
@@ -74,7 +74,7 @@ def build_custom_cnn_model(
     input_shape: Tuple[int, int, int] = (224, 224, 3),
     num_classes: int = 4,
     dropout_rate: float = 0.3
-) -> tf.keras.Model:
+) -> Any:
     """
     Constructs a 4-stage convolutional baseline architecture with Batch Normalization
     and progressive filter scaling (32 -> 64 -> 128 -> 256) trained from scratch.
@@ -85,7 +85,7 @@ def build_custom_cnn_model(
         dropout_rate (float): Dropout rate.
 
     Returns:
-        tf.keras.Model: Compiled Custom CNN model.
+        Any: Compiled Custom CNN model.
     """
     model = models.Sequential([
         layers.Input(shape=input_shape),
@@ -143,7 +143,7 @@ def build_vgg16_model(
     dropout_rate: float = 0.5,
     l2_reg: float = 1e-4,
     freeze_base: bool = True
-) -> Tuple[tf.keras.Model, tf.keras.Model]:
+) -> Tuple[Any, Any]:
     """
     Constructs a VGG16 transfer learning model with custom classification head.
 
@@ -156,7 +156,7 @@ def build_vgg16_model(
         freeze_base (bool): Whether to freeze backbone.
 
     Returns:
-        Tuple[tf.keras.Model, tf.keras.Model]: (full_model, base_model)
+        Tuple[Any, Any]: (full_model, base_model)
     """
     base_model = tf.keras.applications.VGG16(
         weights="imagenet",
@@ -191,7 +191,7 @@ def build_efficientnet_b3_model(
     dropout_rate: float = 0.4,
     l2_reg: float = 1e-4,
     freeze_base: bool = True
-) -> Tuple[tf.keras.Model, tf.keras.Model]:
+) -> Tuple[Any, Any]:
     """
     Constructs an EfficientNetB3 transfer learning architecture with compound scaling.
 
@@ -204,7 +204,7 @@ def build_efficientnet_b3_model(
         freeze_base (bool): Whether to freeze backbone.
 
     Returns:
-        Tuple[tf.keras.Model, tf.keras.Model]: (full_model, base_model)
+        Tuple[Any, Any]: (full_model, base_model)
     """
     base_model = tf.keras.applications.EfficientNetB3(
         weights="imagenet",
@@ -233,7 +233,7 @@ def build_efficientnet_b3_model(
 
 
 def unfreeze_base_model_layers(
-    base_model: tf.keras.Model,
+    base_model: Any,
     unfreeze_from_layer_name: Optional[str] = None,
     num_unfrozen_layers: Optional[int] = None
 ) -> None:
