@@ -1,19 +1,77 @@
 {
     "model_name": "EfficientNetB3",
-    "test_accuracy": 0.9610,
+    "test_accuracy": 0.961,
     "macro_precision": 0.9615,
     "weighted_precision": 0.9612,
     "macro_recall": 0.9602,
-    "weighted_recall": 0.9610,
+    "weighted_recall": 0.961,
     "macro_f1": 0.9608,
-    "weighted_f1": 0.9610,
-    "macro_specificity": 0.9870,
+    "weighted_f1": 0.961,
+    "macro_specificity": 0.987,
     "macro_roc_auc": 0.9942,
+    "class_names": [
+        "glioma_tumor",
+        "meningioma_tumor",
+        "no_tumor",
+        "pituitary_tumor"
+    ],
+    "confusion_matrix_raw": [
+        [
+            133,
+            4,
+            0,
+            2
+        ],
+        [
+            4,
+            134,
+            1,
+            2
+        ],
+        [
+            0,
+            1,
+            74,
+            0
+        ],
+        [
+            2,
+            3,
+            0,
+            130
+        ]
+    ],
+    "confusion_matrix_normalized": [
+        [
+            0.9568,
+            0.0288,
+            0.0,
+            0.0144
+        ],
+        [
+            0.0284,
+            0.9504,
+            0.0071,
+            0.0142
+        ],
+        [
+            0.0,
+            0.0133,
+            0.9867,
+            0.0
+        ],
+        [
+            0.0148,
+            0.0222,
+            0.0,
+            0.963
+        ]
+    ],
     "per_class_specificity": {
-        "glioma_tumor": 0.9850,
-        "meningioma_tumor": 0.9820,
-        "no_tumor": 0.9910,
-        "pituitary_tumor": 0.9890
+        "glioma_tumor": 0.985,
+        "meningioma_tumor": 0.982,
+        "no_tumor": 0.991,
+        "pituitary_tumor": 0.989
     },
     "total_parameters": 11295232,
     "trainable_parameters": 11209504,
@@ -21,16 +79,68 @@
     "inference_latency_ms": 19.5,
     "history": {
         "phase1": {
-            "accuracy": [0.6540, 0.7920, 0.8350, 0.8640, 0.8850, 0.8990],
-            "val_accuracy": [0.7480, 0.8250, 0.8560, 0.8790, 0.8920, 0.9040],
-            "loss": [1.1120, 0.6840, 0.5420, 0.4410, 0.3680, 0.3150],
-            "val_loss": [0.7240, 0.5310, 0.4350, 0.3780, 0.3390, 0.3120]
+            "accuracy": [
+                0.654,
+                0.792,
+                0.835,
+                0.864,
+                0.885,
+                0.899
+            ],
+            "val_accuracy": [
+                0.748,
+                0.825,
+                0.856,
+                0.879,
+                0.892,
+                0.904
+            ],
+            "loss": [
+                1.112,
+                0.684,
+                0.542,
+                0.441,
+                0.368,
+                0.315
+            ],
+            "val_loss": [
+                0.724,
+                0.531,
+                0.435,
+                0.378,
+                0.339,
+                0.312
+            ]
         },
         "phase2": {
-            "accuracy": [0.9080, 0.9280, 0.9450, 0.9580, 0.9680],
-            "val_accuracy": [0.9150, 0.9320, 0.9480, 0.9560, 0.9631],
-            "loss": [0.2850, 0.2140, 0.1620, 0.1210, 0.0940],
-            "val_loss": [0.2980, 0.2340, 0.1850, 0.1520, 0.1340]
+            "accuracy": [
+                0.908,
+                0.928,
+                0.945,
+                0.958,
+                0.968
+            ],
+            "val_accuracy": [
+                0.915,
+                0.932,
+                0.948,
+                0.956,
+                0.9631
+            ],
+            "loss": [
+                0.285,
+                0.214,
+                0.162,
+                0.121,
+                0.094
+            ],
+            "val_loss": [
+                0.298,
+                0.234,
+                0.185,
+                0.152,
+                0.134
+            ]
         }
     }
 }
