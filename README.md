@@ -118,10 +118,10 @@ All models were evaluated on the **identical, strictly unseen Test partition (15
 
 | Model Architecture | Test Accuracy | Macro F1-Score | Macro Precision | Macro Sensitivity | Macro Specificity | ROC-AUC (OvR) | Parameters | Model Size | Inference Latency |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **ResNet50 (Assigned)** | **96.74%** | **0.9672** | **0.9680** | **0.9665** | **0.9890** | **0.9958** | **24.1M** | **91.9 MB** | **17.2 ms** |
-| **EfficientNetB3** | 96.10% | 0.9608 | 0.9615 | 0.9602 | 0.9870 | 0.9942 | 11.3M | 43.1 MB | 19.5 ms |
-| **VGG16** | 94.56% | 0.9452 | 0.9460 | 0.9448 | 0.9815 | 0.9910 | 15.2M | 58.1 MB | 27.8 ms |
-| **Custom CNN (Baseline)** | 89.24% | 0.8918 | 0.8935 | 0.8910 | 0.9640 | 0.9712 | 1.4M | 5.5 MB | 7.4 ms |
+| **ResNet50 (Assigned)** |  |  |  |  |  |  |  |  |  |
+| **EfficientNetB3** |  |  |  |  |  |  |  |  |  |
+| **VGG16** |  |  |  |  |  |  |  |  |  |
+| **Custom CNN (Baseline)** ||  |  |  |  |  |  |  |  |  |
 
 ---
 
