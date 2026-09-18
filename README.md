@@ -24,10 +24,10 @@ The system addresses the clinical diagnosis of four distinct cranial conditions:
 ###  Architectures Implemented & Compared:
 | Model | Type | Focus / Role | Assigned Member |
 | :--- | :--- | :--- | :--- |
-| **ResNet50** | Pretrained Transfer Learning | **Primary Model (Deep Residual Learning + Grad-CAM XAI)** | **K.H. Gamalath** |
-| **Custom CNN** | Trained from Scratch | 4-Stage Hierarchical Baseline | Group Member 2 |
-| **VGG16** | Pretrained Transfer Learning | Deep Uniform $3 \times 3$ Convolutional Network | Group Member 3 |
-| **EfficientNetB3** | Pretrained Transfer Learning | Compound-Scaled MBConv Network | Group Member 4 |
+| **ResNet50** | Pretrained Transfer Learning | **Primary Model (Deep Residual Learning + Grad-CAM XAI)** |  |
+| **Custom CNN** | Trained from Scratch | 4-Stage Hierarchical Baseline |  |
+| **VGG16** | Pretrained Transfer Learning | Deep Uniform $3 \times 3$ Convolutional Network |  |
+| **EfficientNetB3** | Pretrained Transfer Learning | Compound-Scaled MBConv Network |  |
 
 ---
 
