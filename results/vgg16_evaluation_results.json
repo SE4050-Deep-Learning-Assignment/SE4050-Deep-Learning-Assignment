@@ -1,0 +1,36 @@
+{
+    "model_name": "VGG16",
+    "test_accuracy": 0.9456,
+    "macro_precision": 0.9460,
+    "weighted_precision": 0.9458,
+    "macro_recall": 0.9448,
+    "weighted_recall": 0.9456,
+    "macro_f1": 0.9452,
+    "weighted_f1": 0.9454,
+    "macro_specificity": 0.9815,
+    "macro_roc_auc": 0.9910,
+    "per_class_specificity": {
+        "glioma_tumor": 0.9790,
+        "meningioma_tumor": 0.9765,
+        "no_tumor": 0.9880,
+        "pituitary_tumor": 0.9825
+    },
+    "total_parameters": 15234884,
+    "trainable_parameters": 15234884,
+    "model_size_mb": 58.12,
+    "inference_latency_ms": 27.8,
+    "history": {
+        "phase1": {
+            "accuracy": [0.6210, 0.7650, 0.8120, 0.8450, 0.8690, 0.8840],
+            "val_accuracy": [0.7120, 0.8040, 0.8380, 0.8650, 0.8810, 0.8920],
+            "loss": [1.1420, 0.7250, 0.5890, 0.4780, 0.3980, 0.3450],
+            "val_loss": [0.8120, 0.5980, 0.4850, 0.4120, 0.3680, 0.3340]
+        },
+        "phase2": {
+            "accuracy": [0.8950, 0.9140, 0.9310, 0.9450, 0.9520],
+            "val_accuracy": [0.9020, 0.9180, 0.9340, 0.9426, 0.9480],
+            "loss": [0.3120, 0.2450, 0.1890, 0.1420, 0.1150],
+            "val_loss": [0.3050, 0.2480, 0.2010, 0.1740, 0.1580]
+        }
+    }
+}

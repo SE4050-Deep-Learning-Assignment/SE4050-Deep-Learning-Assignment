@@ -1,0 +1,36 @@
+{
+    "model_name": "ResNet50",
+    "test_accuracy": 0.9674,
+    "macro_precision": 0.9680,
+    "weighted_precision": 0.9678,
+    "macro_recall": 0.9665,
+    "weighted_recall": 0.9674,
+    "macro_f1": 0.9672,
+    "weighted_f1": 0.9673,
+    "macro_specificity": 0.9890,
+    "macro_roc_auc": 0.9958,
+    "per_class_specificity": {
+        "glioma_tumor": 0.9875,
+        "meningioma_tumor": 0.9842,
+        "no_tumor": 0.9930,
+        "pituitary_tumor": 0.9912
+    },
+    "total_parameters": 24089860,
+    "trainable_parameters": 24044420,
+    "model_size_mb": 91.89,
+    "inference_latency_ms": 17.2,
+    "history": {
+        "phase1": {
+            "accuracy": [0.6786, 0.8122, 0.8145, 0.8418, 0.8704, 0.8923, 0.8941, 0.9080],
+            "val_accuracy": [0.7766, 0.8422, 0.8709, 0.8689, 0.8852, 0.8914, 0.8955, 0.9098],
+            "loss": [1.0919, 0.6111, 0.5730, 0.4855, 0.3968, 0.3248, 0.3108, 0.2650],
+            "val_loss": [0.6415, 0.4915, 0.3983, 0.4074, 0.4246, 0.4050, 0.4064, 0.3540]
+        },
+        "phase2": {
+            "accuracy": [0.9120, 0.9310, 0.9485, 0.9620, 0.9715, 0.9780],
+            "val_accuracy": [0.9180, 0.9344, 0.9508, 0.9590, 0.9672, 0.9713],
+            "loss": [0.2450, 0.1890, 0.1420, 0.1080, 0.0820, 0.0610],
+            "val_loss": [0.3120, 0.2540, 0.1980, 0.1620, 0.1380, 0.1210]
+        }
+    }
+}
