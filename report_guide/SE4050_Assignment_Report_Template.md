@@ -1,4 +1,4 @@
-# 📄 SE4050 – Deep Learning Assignment: Comprehensive Academic Report Guide & Template
+# SE4050 – Deep Learning Assignment: Comprehensive Academic Report Guide & Template
 
 **Module**: SE4050 – Deep Learning (2026)  
 **Degree**: BSc (Hons) in Information Technology  
@@ -8,7 +8,7 @@
 
 ---
 
-## 📑 Required Report Structure (10 Sections Aligned with Rubric)
+## Required Report Structure (10 Sections Aligned with Rubric)
 
 ### Section 1: Introduction and Problem Definition
 - **Clinical Motivation**: Brain tumors (gliomas, meningiomas, pituitary tumors) represent one of the most fatal oncological conditions worldwide. Early, accurate detection and differential diagnosis using Magnetic Resonance Imaging (MRI) is vital for surgical planning, radiotherapy, and survival prognosis.

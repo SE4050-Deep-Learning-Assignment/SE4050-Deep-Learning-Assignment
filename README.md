@@ -1,4 +1,4 @@
-#  Brain Tumor MRI Classification Using Deep Learning
+# Brain Tumor MRI Classification Using Deep Learning
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15%2B-orange.svg)](https://tensorflow.org/)
@@ -12,7 +12,7 @@
 
 ---
 
-##  Project Overview
+## Project Overview
 This repository contains an end-to-end, Deep Learning system for the automated multi-class classification of Brain Tumor Magnetic Resonance Imaging (MRI) scans.
 
 The system addresses the clinical diagnosis of four distinct cranial conditions:
@@ -21,7 +21,7 @@ The system addresses the clinical diagnosis of four distinct cranial conditions:
 3. **No Tumor / Healthy Control** (`no_tumor`)
 4. **Pituitary Tumor** (`pituitary_tumor`)
 
-###  Architectures Implemented & Compared:
+### Architectures Implemented & Compared:
 | Model | Type | Focus / Role | Assigned Member |
 | :--- | :--- | :--- | :--- |
 | **ResNet50** | Pretrained Transfer Learning | **Primary Model (Deep Residual Learning + Grad-CAM XAI)** |  |
@@ -31,7 +31,7 @@ The system addresses the clinical diagnosis of four distinct cranial conditions:
 
 ---
 
-##  Medical Preprocessing Pipeline
+## Medical Preprocessing Pipeline
 To guarantee rigorous, fair comparison across all architectures and eliminate data leakage, a **unified medical-grade preprocessing pipeline** was developed in [`notebooks/01_Data_Preprocessing_and_EDA.ipynb`](notebooks/01_Data_Preprocessing_and_EDA.ipynb):
 
 1. **Cranial Contour Extraction (Extreme Points Cropping)**:
@@ -44,7 +44,7 @@ To guarantee rigorous, fair comparison across all architectures and eliminate da
 
 ---
 
-##  Repository Structure
+## Repository Structure
 
 ```
 SE4050-Deep-Learning-Assignment/
@@ -80,7 +80,7 @@ SE4050-Deep-Learning-Assignment/
 
 ---
 
-##  Step-by-Step Execution Guide
+## Step-by-Step Execution Guide
 
 ### Option 1: Running in Google Colab (Recommended for GPU Acceleration)
 1. Open Google Colab and upload the notebook files from `notebooks/`.
@@ -112,7 +112,7 @@ jupyter lab
 
 ---
 
-##  Experimental Results & Benchmark Summary
+## Experimental Results & Benchmark Summary
 
 All models were evaluated on the **identical, strictly unseen Test partition (15% split)** under standardized experimental conditions:
 
@@ -125,7 +125,7 @@ All models were evaluated on the **identical, strictly unseen Test partition (15
 
 ---
 
-##  Explainable AI (XAI): Grad-CAM Heatmaps
+## Explainable AI (XAI): Grad-CAM Heatmaps
 In high-stakes clinical diagnostic environments, black-box predictions are insufficient. We implemented **Gradient-weighted Class Activation Mapping (Grad-CAM)** on the final convolutional bottleneck layer (`conv5_block3_out`) of ResNet50.
 
 Grad-CAM verifies that:
@@ -134,14 +134,14 @@ Grad-CAM verifies that:
 
 ---
 
-## 👥 Group Submission Files
+## Group Submission Files
 - `Members.txt`: List of team member names, student registration numbers, and institutional emails.
 - `Submission.txt`: Submission metadata, GitHub repository URL, and YouTube demonstration link.
 - `Report.pdf`: Academic project report adhering to the 10-section structure.
 
 ---
 
-## 📜 References
+## References
 1. S. Bhuvaji, A. Kadam, P. Bhumkar, S. Dedge, and S. Kanchan, "Brain Tumor Classification (MRI)," *Kaggle Dataset*, 2020.
 2. K. He, X. Zhang, S. Ren, and J. Sun, "Deep Residual Learning for Image Recognition," in *Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR)*, 2016, pp. 770-778.
 3. K. Simonyan and A. Zisserman, "Very Deep Convolutional Networks for Large-Scale Image Recognition," in *Int. Conf. Learn. Represent. (ICLR)*, 2015.
